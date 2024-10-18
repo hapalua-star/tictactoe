@@ -40,7 +40,15 @@ const GameController = (() => {
       Gameboard.updateBoard(index, currentPlayer.marker);
       switchTurn();
 
-      console.log(Gameboard.getBoard());
+      
+      const board = Gameboard.getBoard();
+      console.log(`${board[0]} | ${board[1]} | ${board[2]}`);
+      console.log("---------");
+      console.log(`${board[3]} | ${board[4]} | ${board[5]}`);
+      console.log("---------");
+      console.log(`${board[6]} | ${board[7]} | ${board[8]}`);
+
+      
     };
   
     const switchTurn = () => {
