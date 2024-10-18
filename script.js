@@ -39,6 +39,8 @@ const GameController = (() => {
     const playRound = (index) => {
       Gameboard.updateBoard(index, currentPlayer.marker);
       switchTurn();
+
+      console.log(Gameboard.getBoard());
     };
   
     const switchTurn = () => {
