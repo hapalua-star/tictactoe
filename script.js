@@ -11,13 +11,6 @@ const Player = (name, marker) => {
 
 
 
-
-
-
-
-
-
-
 const Gameboard = (() => {
     let board = ["", "", "", "", "", "", "", "", ""];
     return {
@@ -41,6 +34,10 @@ const GameController = (() => {
       switchTurn();
 
       
+      //winner combination array check here
+
+
+
       const board = Gameboard.getBoard();
       console.log(`${board[0]} | ${board[1]} | ${board[2]}`);
       console.log("---------");
@@ -54,6 +51,13 @@ const GameController = (() => {
     const switchTurn = () => {
       currentPlayer = currentPlayer === player1 ? player2 : player1;
     };
+
+
+
+     // check winner function goes here
+
+
+
   
     return { playRound };
   })();
