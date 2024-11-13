@@ -1,0 +1,21 @@
+html,body{
+    height:100%;
+    margin:0;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tictactoe
+{
+ 
+  
+    width:500px;
+    height:435px;
+    border:1px solid rgb(30, 33, 214);
+    background: yellow;    
+    border-radius: 15px;
+
+}
