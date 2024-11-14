@@ -17,5 +17,21 @@ html,body{
     border:1px solid rgb(30, 33, 214);
     background: yellow;    
     border-radius: 15px;
+    display:flex;
+    justify-content: space-around;
+    align-content: space-around;
 
+    display:grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    gap: 42px;
+    
+
+
+}
+
+.cell1
+{
+    width:100px;
+    height:100px;
 }
