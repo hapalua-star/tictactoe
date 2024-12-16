@@ -101,6 +101,30 @@ const printBoard = () => {
   })();
 
   
+  const DisplayController= (function(){
+    var cells=document.querySelectorAll(".cell1");
+
+    function render(){
+      var board=Gameboard.getBoard();
+      for(var i=0; i<cells.length;i++){
+        cells[i].textContent=board[i];
+      
+    }
+  }
+
+    function addEventlisteners(){
+      for(var i=0; i<cells.length; i++){
+         (function (index){
+          cells[index].addEventListener("click",function(){
+            GameController.playRound(index);
+          });
+         })(i); //use iife to capture the correct index in the loop
+
+      }
+    }
+    return{render:render,addEventlisteners:addEventlisteners};
+  })();
   
-  
+  //initialize the game
+  DisplayController.addEventlisteners();
   

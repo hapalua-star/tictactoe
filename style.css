@@ -3,7 +3,8 @@ html,body{
     margin:0;
 
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:space-around;
     align-items: center;
 }
 
@@ -11,7 +12,7 @@ html,body{
 .tictactoe
 {
  
-  
+    margin-bottom: 50px;
     width:500px;
     height:435px;
     border:1px solid rgb(30, 33, 214);
@@ -34,4 +35,9 @@ html,body{
 {
     width:100px;
     height:100px;
+}
+
+h1
+{
+    color: rgb(156, 238, 183);
 }
