@@ -78,6 +78,19 @@ const checkWinner = () => {
       
 const printBoard = () => {
       const board = Gameboard.getBoard();
+
+      const cells = document.querySelectorAll(".cell1"); // Select all board cells
+
+      cells.forEach((cell, index) => {
+          cell.textContent = board[index]; // Update cell content
+      });
+
+
+
+
+
+
+
       console.log(`${board[0]} | ${board[1]} | ${board[2]}`);
       console.log("---------");
       console.log(`${board[3]} | ${board[4]} | ${board[5]}`);
