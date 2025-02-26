@@ -64,7 +64,8 @@ const checkWinner = () => {
 
     if (board[a] === currentPlayer.marker && board[b] === currentPlayer.marker && board[c] === currentPlayer.marker) {
 
-      console.log("winner"); // If a winner is found, log it
+      console.log(currentPlayer.name+" is winner"); // If a winner is found, log it
+      console.log("GAME OVER!");
       return true;
     }
   }
