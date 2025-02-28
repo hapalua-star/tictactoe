@@ -9,7 +9,7 @@ html,body{
 }
 
 
-.tictactoe
+#tictactoe
 {
  
     margin-bottom: 50px;
@@ -40,4 +40,21 @@ html,body{
 h1
 {
     color: rgb(156, 238, 183);
+}
+
+
+.startButton
+{
+    width:50px;
+    height:50px;
+    background-color: darkblue;
+    margin-top: 50px;
+}
+
+
+.restartButton
+{
+    width:50px;
+    height:50px;
+    background-color: brown;
 }

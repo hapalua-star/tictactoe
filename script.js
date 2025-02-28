@@ -148,3 +148,13 @@ const printBoard = () => {
   //initialize the game
   DisplayController.addEventlisteners();
   
+  
+  const frame1=document.getElementById('tictactoe');
+
+  const startButton=document.createElement('button');
+  startButton.classList.add('startButton');
+
+  frame1.appendChild(startButton);
+
+  
+  
