@@ -47,13 +47,18 @@ const GameController = (() => {
     let currentPlayer = player1;
   
     const playRound = (index) => {
-      Gameboard.updateBoard(index, currentPlayer.marker);
+      if (gameOver || Gameboard.updateBoard(index, currentPlayer.marker)) return;
+
+      //Gameboard.updateBoard(index, currentPlayer.marker);
       printBoard();
+     // if (checkWinner()) return;
       checkWinner();
       switchTurn();
 //winner combination array check here
        
     }
+
+    let gameOver=false;
 
 const checkWinner = () => {
   const board = Gameboard.getBoard(); // Get the current state of the board
@@ -66,6 +71,7 @@ const checkWinner = () => {
 
       console.log(currentPlayer.name+" is winner"); // If a winner is found, log it
       console.log("GAME OVER!");
+      gameOver=true;
       return true;
     }
   }
