@@ -18,10 +18,23 @@ const Gameboard = (() => {
       updateBoard: (index, playerMark) => {
         if (board[index] === "") {
           board[index] = playerMark;
-        }
+          
+          const cell = document.querySelector(`[data-index='${index}']`);
+          if (cell) {
+              cell.removeEventListener("click", handleCellClick);
+  
+      
       }
     };
+  }
+};
   })();
+
+
+  function handleCellClick(event) {
+    const index = event.target.getAttribute("data-index");
+    GameController.playRound(index);
+}
   
 
 
@@ -53,7 +66,7 @@ const GameController = (() => {
       printBoard();
      // if (checkWinner()) return;
       checkWinner();
-      switchTurn();
+      switchTurn();  //needs to be worked on!!!!!!!
 //winner combination array check here
        
     }
@@ -90,6 +103,12 @@ const printBoard = () => {
 
       cells.forEach((cell, index) => {
           cell.textContent = board[index]; // Update cell content
+
+          if (board[index] !== "") {
+            cell.removeEventListener("click", handleCellClick);
+        }
+
+
       });
 
 
@@ -136,7 +155,7 @@ const printBoard = () => {
       for(var i=0; i<cells.length; i++){
          (function (index){
           cells[index].addEventListener("click",function(){
-            GameController.playRound(index);
+            GameController.playRound(index); 
           });
          })(i); //use iife to capture the correct index in the loop
 
@@ -146,7 +165,7 @@ const printBoard = () => {
   })();
   
   //initialize the game
-  DisplayController.addEventlisteners();
+  //DisplayController.addEventlisteners();
   
   
   const frame1=document.getElementById('tictactoe');
@@ -156,5 +175,8 @@ const printBoard = () => {
 
   frame1.appendChild(startButton);
 
-  
+  startButton.addEventListener("click",function()
+{
+  DisplayController.addEventlisteners();
+});
   
