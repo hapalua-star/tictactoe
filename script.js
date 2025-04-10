@@ -18,17 +18,20 @@ const Gameboard = (() => {
       updateBoard: (index, playerMark) => {
         if (board[index] === "") {
           board[index] = playerMark;
+
+          return true;
           
-          const cell = document.querySelector(`[data-index='${index}']`);
+          /*const cell = document.querySelector(`[data-index='${index}']`);
           if (cell) {
-              cell.removeEventListener("click", handleCellClick);
+              cell.removeEventListener("click", handleCellClick);*/
   
       
       }
-    };
+      return false;
+    }
   }
-};
-  })();
+}
+  )();
 
 
   function handleCellClick(event) {
@@ -60,9 +63,13 @@ const GameController = (() => {
     let currentPlayer = player1;
   
     const playRound = (index) => {
-      if (gameOver || Gameboard.updateBoard(index, currentPlayer.marker)) return;
+      if (gameOver ) return;
 
-      //Gameboard.updateBoard(index, currentPlayer.marker);
+      const validMove=Gameboard.updateBoard(index, currentPlayer.marker);
+      if (!validMove)
+        return; 
+
+      
       printBoard();
      // if (checkWinner()) return;
       checkWinner();
@@ -104,16 +111,12 @@ const printBoard = () => {
       cells.forEach((cell, index) => {
           cell.textContent = board[index]; // Update cell content
 
-          if (board[index] !== "") {
+          if (board[index] !=="") {
             cell.removeEventListener("click", handleCellClick);
         }
 
 
       });
-
-
-
-
 
 
 
