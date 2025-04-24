@@ -21,15 +21,18 @@ const Gameboard = (() => {
 
           return true;
           
-          /*const cell = document.querySelector(`[data-index='${index}']`);
-          if (cell) {
-              cell.removeEventListener("click", handleCellClick);*/
-  
+          
       
       }
       return false;
-    }
+    },
+    
+
+  resetBoard:() =>
+  {
+    board=["","","","","","","","",""];
   }
+    }
 }
   )();
 
@@ -58,6 +61,12 @@ const GameController = (() => {
     
   ];
 
+
+  const reset=()=>
+  {
+    gameOver = false;
+    currentPlayer = player1;
+  };
 
 
     let currentPlayer = player1;
@@ -139,7 +148,7 @@ const printBoard = () => {
 
 
   
-    return { playRound };
+    return { playRound, reset };
   })();
 
   
@@ -176,10 +185,22 @@ const printBoard = () => {
   const startButton=document.createElement('button');
   startButton.classList.add('startButton');
 
+ 
   frame1.appendChild(startButton);
 
+
+
+
+
+
+
+  
   startButton.addEventListener("click",function()
 {
+  Gameboard.resetBoard();
+  GameController.reset();
+  DisplayController.render();
   DisplayController.addEventlisteners();
+  
 });
   
