@@ -193,9 +193,7 @@ const printBoard = () => {
 
 
 
-
-  
-  startButton.addEventListener("click",function()
+startButton.addEventListener("click",function()
 {
   Gameboard.resetBoard();
   GameController.reset();
