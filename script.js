@@ -202,3 +202,19 @@ startButton.addEventListener("click",function()
   
 });
   
+
+
+addBookToLibrary()
+ {
+  const player1=document.getElementById('player1').value;
+  const player2=document.getElementById('player2').value;
+
+ 
+  const Booked=new Book(title1,author1,pages1,read1);
+  this.myLibrary.push(Booked);
+
+
+  
+  displayBookCard(Booked,this.myLibrary.length-1);
+
+};
