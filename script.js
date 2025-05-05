@@ -4,8 +4,8 @@ const Player = (name, marker) => {
     return { name, marker };
   };
   
-  const player1 = Player("Alice", "X");
-  const player2 = Player("Bob", "O");
+  let player1 ;
+  let player2 ;
 
   
 
@@ -195,26 +195,34 @@ const printBoard = () => {
 
 startButton.addEventListener("click",function()
 {
+   player1Name=document.getElementById('player1').value;
+   player2Name=document.getElementById('player2').value;
+
+   player1 = Player(player1Name, "X");
+   player2 = Player(player2Name, "O");
+ 
   Gameboard.resetBoard();
   GameController.reset();
   DisplayController.render();
   DisplayController.addEventlisteners();
+
+  
   
 });
   
 
 
-addBookToLibrary()
+/*AddPlayers()
  {
   const player1=document.getElementById('player1').value;
   const player2=document.getElementById('player2').value;
 
  
-  const Booked=new Book(title1,author1,pages1,read1);
-  this.myLibrary.push(Booked);
+ /* const Booked=new Book(title1,author1,pages1,read1);
+  this.myLibrary.push(Booked);*/
 
 
   
-  displayBookCard(Booked,this.myLibrary.length-1);
+  //displayBookCard(Booked,this.myLibrary.length-1);
 
-};
+//};
